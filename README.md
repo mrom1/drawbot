@@ -3,10 +3,9 @@ This is the code for a self built drawing robot, I seriously doubt anyone could 
 
 The drawing robot itself is basically a simple CNC machine. The Qt client uses OpenCV with edge detection to extract the lines which will be drawn.
 
-The firmware of the drawing robot is written for a Arduino Board. The drawing robot uses three stepper motors for X,Y navigation and one for the Z axis.
+The firmware of the drawing robot is written for an Arduino Board. The drawing robot uses three stepper motors for X, Y navigation and one for the Z axis.
 
-At the time of writing this the server is basically just a python script which relays gcode instructions to the arduino board through a serial interface. 
-
+At the time of writing this the server is basically just a python script which relays G-code instructions to the Arduino board through a serial interface. 
 
 
 
@@ -25,14 +24,19 @@ You can use the slider to adjust the threshold of the edge detection algorithm. 
 ## How to build
 
 ```console
+# Clone repository
 git clone https://github.com/mrom1/drawbot
 cd drawbot
+
+# Configure
 cmake -S. -Bbuild
+
+# Build
 cmake --build build
 ```
 
 ## ToDo
 - [ ] Seperate Client, Server and Firmware into different repositories
 - [ ] Add Github Actions
-- [ ] Add documentation for the robot itself
-- [ ] Build a real webserver that can run on a RaspberryPi
+- [ ] Add documentation for building the robot itself
+- [ ] Build a complete web server that can run on a RaspberryPi
